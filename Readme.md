@@ -1,5 +1,5 @@
 ICCI
-image is a container like class i
+'I'mage is a 'C'ontainer as 'C'lass is a 'I'nstance --> ICCI
 
 Referencia
 https://docs.docker.com/engine/reference/builder/
