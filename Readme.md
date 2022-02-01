@@ -58,5 +58,5 @@ exit
 
 Run directo en apache compartiendo datos.
 
-docker run --rm -it -p 8000:80 -v PWD/data:/var/www/html php:7.2-apache 
+docker run --rm -it -p 8000:80 -v $PWD/data:/var/www/html php:7.2-apache 
 
