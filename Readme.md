@@ -111,8 +111,10 @@ Para poder utilizar los comandos de Docker y que funcionen utilizando minikube c
 Son comandos que nos generar el ym de un pod. 
 Que es un pod ela especificación de nuestro conjunto de contarines que forman nuestra aplicación.
 
-kubectl run hello-world --image=codely-docker:latest --port=80 -o yaml
+kubectl run hello-world --image=codely-docker:latest --port=80 --dry-run -o yaml > pod-file-name.yaml
 
+ --dry-run 
+ esto indica a kubctl que no queremos mandarlo a la api de kubernets. solo generar el pod yaml
 
 -yaml 
 esto nos genera el pod por consola.
@@ -127,3 +129,10 @@ crea un pod a partir de un archivo.
 
 - minikube dashboard
 nos da una interfaz gráfica para nuestros pods dentro de minikube
+
+
+## Generar un service
+
+se generar con kubectl expose.
+
+ - kubectl expose pod/alex-hello --port 80 --dry-run=none -o yaml > service-alex-hello.yaml
