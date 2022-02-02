@@ -60,3 +60,48 @@ Run directo en apache compartiendo datos.
 
 docker run --rm -it -p 8000:80 -v $PWD/data:/var/www/html php:7.2-apache 
 
+# KUBERNETES
+
+Para ejecutar con powershell
+
+commandos
+
+- kubectl version
+
+   nos da la version de kubernetes y del cluster. que deberían de coincidir.
+- minikube start
+
+   para arrancar nuestro cluster virtual. Tenemos que ejecutarlo en una shell para ir mandando comandos con kubectl 
+- minikube status
+   nos da informacion del cluster
+
+- minikube ip
+   nos da la ip del clustser.
+
+- kubectl get nodes
+   nos dice cuantos nodos tenemos en el cluster.
+- kubectl cluster-info
+
+   summary del estado del cluster.
+
+- crear un pod de nuestra aplicación alex-hello
+
+kubectl run alex-hello --image=dindev/alex-hello:latest --port=80
+
+se baja de nuestro docker hub la app para ponerla a funcionar.
+
+- kubectl get pods
+nos da una lista de pods creados
+- port forward
+
+ kubectl port-forward pod/alex-hello 8000:80
+
+para decirle que nuestro puerto 8000 se vaya al 80 del cluster.
+
+trouble shotting
+- kubectl describe pod/alex-hello
+si no podemos comp
+
+- eval $(minikube docker-env -u)
+
+Para poder utilizar los comandos de Docker y que funcionen utilizando minikube como host para Docker, tenemos que lanzar esto y los comandos de Docker empezarán a funcionar
