@@ -105,3 +105,24 @@ si no podemos comp
 - eval $(minikube docker-env -u)
 
 Para poder utilizar los comandos de Docker y que funcionen utilizando minikube como host para Docker, tenemos que lanzar esto y los comandos de Docker empezarán a funcionar
+
+## Comandos generadores.
+
+Son comandos que nos generar el ym de un pod. 
+Que es un pod ela especificación de nuestro conjunto de contarines que forman nuestra aplicación.
+
+kubectl run hello-world --image=codely-docker:latest --port=80 -o yaml
+
+
+-yaml 
+esto nos genera el pod por consola.
+
+- kubectl delete pods/alex-hello
+   nos borrar un pod.
+   listar antes para ver el nombre exacto. 
+- kubectl create -f pod.yaml
+
+crea un pod a partir de un archivo.
+
+- minikube dashboard
+nos da una interfaz gráfica para nuestros pods dentro de minikube
