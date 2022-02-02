@@ -118,6 +118,7 @@ kubectl run hello-world --image=codely-docker:latest --port=80 -o yaml
 esto nos genera el pod por consola.
 
 - kubectl delete pods/alex-hello
+- kubectl delete pods alex-hello
    nos borrar un pod.
    listar antes para ver el nombre exacto. 
 - kubectl create -f pod.yaml
