@@ -147,7 +147,11 @@ se generar con kubectl expose.
  a ficheo
  - kubectl expose pod/alex-hello --port 80 --dry-run=client -o yaml > service-alex-hello.yaml
 
+los exposes en windows no funcionan muy bien. Hay que decirle a minikube quelos abra.
 
+- minikube service alex-hello
+
+esto nos abrirá la URL directamente y genera un tunnel que redirije el tráfico.
 
 ## cosas
  PAra lanzar containers dentro del cluster es necesario en cada shell ejecutar esto;
