@@ -136,3 +136,9 @@ nos da una interfaz gráfica para nuestros pods dentro de minikube
 se generar con kubectl expose.
 
  - kubectl expose pod/alex-hello --port 80 --dry-run=none -o yaml > service-alex-hello.yaml
+
+
+
+## cosas
+ - kubectl run --rm -i --tty my-client-app --image=alpine --restart=Never -- sh
+ para generar en nuestro cluster un node de alpine i conectar a su shell y así usarlo de client.
