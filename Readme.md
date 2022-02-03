@@ -52,6 +52,13 @@ especificar la ruta donde crear el volumen en mi ordenador local
 Montar en el directorio actual/DATA un volumen para guardar los datos.
 docker run -it --name vol-test3 -v $PWD/data:/data ubuntu 
 
+# subir la imagen
+- construir
+   docker build -t "dindev/alex-hello:2" .
+- taggear
+   docker tag alex-hello:2 dindev/alex-hello:2
+- publicar
+   docker push dindev/alex-hello:2
 
 Salir 
 exit
