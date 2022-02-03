@@ -172,3 +172,19 @@ Al indicair --restart=always se creará um kind:Deployment
  si un nodo cae y contiene un de los nodos indicados en el deployment. se crea uno nuevo.
 
  El número de réplicas indica el número de pods que se mantienen.
+
+ ## habilitar ingress.
+ ingres es el que reconciliador que nos gestionará el traffico que llega al cluster.
+ hay varias implementacione. se va a utilizar aquí la de nginx.
+
+
+habilitar el addon en minikube
+
+para listar los addons.
+- minikube addons list
+habilitar.
+- minikube addons enable ingress
+
+
+generador para el ingress
+- kubectl create ingress alex-hello --default-backend alex-hello:80 --dry-run=client -o yaml > ingress.yaml
