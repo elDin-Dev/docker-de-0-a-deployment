@@ -140,5 +140,28 @@ se generar con kubectl expose.
 
 
 ## cosas
+ PAra lanzar containers dentro del cluster es necesario en cada shell ejecutar esto;
+   eval $(minikube docker-env)
+
+   pero en windows 10 no va.
+   el equivalente es ejecutar:
+   - eval $(minikube docker-env)
+   - minikube docker-env | Invoke-Expression
+   luego ya poodemos meter el alpine por ejemplo y attacharnos a su shell:
+   
  - kubectl run --rm -i --tty my-client-app --image=alpine --restart=Never -- sh
  para generar en nuestro cluster un node de alpine i conectar a su shell y así usarlo de client.
+
+ ## Deployments
+
+ para crer deployments que kubernetes mantendrá mas allá del ciclo de vida de los nodos.
+
+ Generator para generar un deployment:
+
+Al indicair --restart=always se creará um kind:Deployment
+
+ -  kubectl create deployment alex-hello --image=dindev/alex-hello:latest --port=80 --dry-run=client -o yaml > deploy-alex-hello.yaml
+
+ si un nodo cae y contiene un de los nodos indicados en el deployment. se crea uno nuevo.
+
+ El número de réplicas indica el número de pods que se mantienen.
