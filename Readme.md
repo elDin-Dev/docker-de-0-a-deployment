@@ -142,7 +142,10 @@ nos da una interfaz gráfica para nuestros pods dentro de minikube
 
 se generar con kubectl expose.
 
- - kubectl expose pod/alex-hello --port 80 --dry-run=none -o yaml > service-alex-hello.yaml
+ directamente a la API
+ - kubectl expose pod/alex-hello --port 80 --type=NodePort
+ a ficheo
+ - kubectl expose pod/alex-hello --port 80 --dry-run=client -o yaml > service-alex-hello.yaml
 
 
 
@@ -152,12 +155,22 @@ se generar con kubectl expose.
 
    pero en windows 10 no va.
    el equivalente es ejecutar:
-   - eval $(minikube docker-env)
+   - minikube docker-env
    - minikube docker-env | Invoke-Expression
    luego ya poodemos meter el alpine por ejemplo y attacharnos a su shell:
+   bajamos la alpine dentro de miniube. luego de ejecutar los comandos anteriores.
+   - docker run alpine
+   ahora ya la tenemos la imagen dentro del cluster i la podemos ejecutar.
+
+   - kubectl run --rm -i --tty my-client-app --image=alpine --restart=Never -- sh
+  para generar en nuestro cluster un node de alpine i conectar a su shell y así usarlo de client.
+
+   dentro de la shell:
    
- - kubectl run --rm -i --tty my-client-app --image=alpine --restart=Never -- sh
- para generar en nuestro cluster un node de alpine i conectar a su shell y así usarlo de client.
+   wget alex-hello/index.php -qSO-
+
+   nos saluda.
+
 
  ## Deployments
 
