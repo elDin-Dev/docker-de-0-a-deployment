@@ -205,3 +205,22 @@ habilitar.
 
 generador para el ingress
 - kubectl create ingress alex-hello --default-backend alex-hello:80 --dry-run=client -o yaml > ingress.yaml
+
+
+ ## config maps & secrets
+
+ sirven para pasar configuración variable y sensible a k8s.
+ No hardcodear valores sensibles de "perfil" o "configuracin".
+
+se pueden pasar con utilizando variables de entorno.
+
+ separa definición de configruarción.
+
+### Config map.
+ Parejas clave valor.
+
+ Generador
+ - kubectl create configmap special-config --from-literal=example.property1=hello --from-literal=example.property2=world
+
+ ver el datalle 
+ - kubectl get configmaps special-config -o yaml
