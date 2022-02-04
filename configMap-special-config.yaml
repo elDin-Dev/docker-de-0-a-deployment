@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  someValue: "666"
+  example.property1: hello
+  example.property2: world
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-02-04T07:28:38Z"
+  name: special-config
+  namespace: default
+  resourceVersion: "368"
+  uid: b51bd849-ea27-4d89-8bb6-01deb63a235b

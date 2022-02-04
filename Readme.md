@@ -55,10 +55,10 @@ docker run -it --name vol-test3 -v $PWD/data:/data ubuntu
 # subir la imagen
 - construir
    docker build -t "dindev/alex-hello:2" .
-- taggear
-   docker tag alex-hello:2 dindev/alex-hello:2
+- taggear - Optional. renombrar sin buildear.
+   docker tag alex-hello:3 dindev/alex-hello
 - publicar
-   docker push dindev/alex-hello:2
+   docker push dindev/alex-hello:3
 
 Salir 
 exit
@@ -175,7 +175,12 @@ esto nos abrirá la URL directamente y genera un tunnel que redirije el tráfico
 
    nos saluda.
 
+ ### cosas
 
+   Ejecutar algo dentro del cluster
+   - kubectl exec -t alex-hello-- /bin/bash
+   dentro de un shell de linus ver las variables de entornoe definidas.
+   - env
  ## Deployments
 
  para crer deployments que kubernetes mantendrá mas allá del ciclo de vida de los nodos.
@@ -224,3 +229,7 @@ se pueden pasar con utilizando variables de entorno.
 
  ver el datalle 
  - kubectl get configmaps special-config -o yaml
+
+ - kubectl exec -t alex-hello-- /bin/bash
+   dentro de un shell de linus ver las variables de entornoe definidas.
+ - env
