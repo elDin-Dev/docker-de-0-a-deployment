@@ -233,3 +233,13 @@ se pueden pasar con utilizando variables de entorno.
  - kubectl exec -t alex-hello-- /bin/bash
    dentro de un shell de linus ver las variables de entornoe definidas.
  - env
+
+
+### KUBECTL con diferentes contextos.
+  para saber los diferentes cluster que tenemos o a los que podemos mandar órdenes desde kubectl:
+   - kubectl config view
+  para cambiar de contextos:
+   - kubectl config use-context
+   - kubectl config get-contexts
+  para cambiar el namespace actual sin cambiar el contexto
+   - '''  kubectl config set-context --current --namespace=<namespace>  '''
