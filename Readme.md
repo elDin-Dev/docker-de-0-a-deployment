@@ -239,7 +239,11 @@ se pueden pasar con utilizando variables de entorno.
   para saber los diferentes cluster que tenemos o a los que podemos mandar órdenes desde kubectl:
    - kubectl config view
   para cambiar de contextos:
-   - kubectl config use-context
+   Primero listar los cotextos
    - kubectl config get-contexts
+   luego cambiar de contexto
+   - kubectl config use-context <context>   
+   - ejemplo: 
+      ''' kubectl config use-context minikube   '''
   para cambiar el namespace actual sin cambiar el contexto
    - '''  kubectl config set-context --current --namespace=<namespace>  '''
