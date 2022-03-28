@@ -69,6 +69,12 @@ docker run --rm -it -p 8000:80 -v $PWD/data:/var/www/html php:7.2-apache
 
 # KUBERNETES
 
+## POD
+la unidad mínima que puedo desplegar en un cluster.
+Un pod puede contener mas de un container.
+Todos los containers desplegados dentro de un mismo pod comparten la misma IP.
+
+
 Para ejecutar con powershell
 
 commandos
@@ -117,6 +123,10 @@ Para poder utilizar los comandos de Docker y que funcionen utilizando minikube c
 
 Son comandos que nos generar el ym de un pod. 
 Que es un pod ela especificación de nuestro conjunto de contarines que forman nuestra aplicación.
+
+ejecuta en nuestro cluster este container
+kubectl run hello-world --image=codely-docker:latest --port=80
+para poder acceder nos faltaría un port forwarding de nuestro pc local al cluster.
 
 kubectl run hello-world --image=codely-docker:latest --port=80 --dry-run -o yaml > pod-file-name.yaml
 
@@ -247,3 +257,8 @@ se pueden pasar con utilizando variables de entorno.
       ''' kubectl config use-context minikube   '''
   para cambiar el namespace actual sin cambiar el contexto
    - '''  kubectl config set-context --current --namespace=<namespace>  '''
+
+
+
+- ver la version del linyx
+   cat /etc/os-release
