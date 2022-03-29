@@ -262,3 +262,9 @@ se pueden pasar con utilizando variables de entorno.
 
 - ver la version del linyx
    cat /etc/os-release
+
+
+ejecutar un container en kubectl
+ - kubectl exec -rm -it ubuntu --/bin/bash
+ - wget url -qSO-
+ - kyvexttl run --tm -i --tty my-client-app --image=alpine --restart=Never -- sh
